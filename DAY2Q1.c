@@ -2,36 +2,28 @@
 
 int main() {
     int n;
-    printf("Enter number of elements: ");
+    printf("enter n: ");
     scanf("%d", &n);
 
     int arr[100];
-
-    printf("Enter %d integers: ", n);
+    printf("enter %d integers: ", n);
     for(int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
-
+    
     int pos;
-    printf("Enter position to delete (0-based): ");
+    printf("enter position to delete (0-based): ");
     scanf("%d", &pos);
 
-    if(pos < 0 || pos >= n) {
-        printf("Invalid position\n");
-        return 0;
+    for(int i = pos; i < n - 1; i++) {
+        arr[i] = arr[i + 1];
     }
 
-    for(int i = pos; i < n-1; i++) {
-        arr[i] = arr[i+1];
-    }
-
-    n--;   
-
-    printf("Updated array: ");
-    for(int i = 0; i < n; i++) {
+    printf("updated array: ");
+    for(int i = 0; i < n - 1; i++) {
         printf("%d ", arr[i]);
     }
+    printf("\n");
 
     return 0;
 }
-
