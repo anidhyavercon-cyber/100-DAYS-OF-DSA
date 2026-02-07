@@ -23,9 +23,13 @@ scanf("%d" , &e);
 while (i<n) {
     if (arr[i] == e) {
         printf("Element found at %d\n" , i);
-        printf("Comparision count: %d", i);
+        printf("Comparision count: %d", i+1);
+        break;
     }
     i++;
+    if (i == n) {
+        printf("NOT FOUND");
+}
 }
 
 return 0;
